@@ -28,4 +28,4 @@
 
 ## Rename
 
-To rename your app, first **backup your ENTIRE local project** then follow this [guide](https://dev.to/abdulbasit313/proper-way-to-rename-a-react-native-project-in-2019-3b98).
+To rename your app, first **BACKUP YOUR SENSITIVE PROJECT FILES** then follow this [guide](https://dev.to/abdulbasit313/proper-way-to-rename-a-react-native-project-in-2019-3b98).
