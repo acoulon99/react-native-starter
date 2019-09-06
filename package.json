@@ -3,14 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build:android": "cd android && ./gradlew clean assembleRelease",
+    "build:android": "cd android && ./gradlew clean assembleRelease && cd..",
+    "clean": "yarn clean:yarn && yarn clean:xcode && yarn clean:gradle",
+    "clean:gradle": "cd android && ./gradlew clean && cd ..",
+    "clean:xcode": "rm -rf ~/Library/Developer/Xcode/DerivedData",
+    "clean:yarn": "yarn cache clean",
     "delete:android:build": "rm -rf android/build && rm -rf android/app/build",
     "delete:ios:pods": "rm -rf ios/Pods",
     "delete:node:modules": "rm -rf node_modules",
+    "delete:watchman:watch": "watchman watch-del-all",
     "install:pods": "cd ios && pod install && cd ..",
     "lint": "eslint .",
     "postinstall": "yarn run install:pods",
-    "reset": "yarn delete:android:build && yarn delete:ios:pods && yarn delete:node:modules && yarn install",
+    "reset": "yarn delete:android:build && yarn delete:ios:pods && yarn delete:node:modules && yarn delete:watchman:watch && yarn clean:yarn && yarn install && yarn clean:gradle && yarn clean:xcode",
     "run:android": "react-native run-android",
     "run:ios": "react-native run-ios",
     "start": "react-native start",
@@ -18,7 +23,12 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.5"
+    "react-native": "0.60.5",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-reanimated": "^1.2.0",
+    "react-native-screens": "^2.0.0-alpha.1",
+    "react-navigation": "^4.0.0",
+    "react-navigation-tabs": "^2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

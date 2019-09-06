@@ -1,30 +1,13 @@
 import React from 'react';
-import {
-    Text,
-    View,
-} from 'react-native';
+import { useScreens } from 'react-native-screens';
+import Navigation from './navigation';
 
-const styleContainer = {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center', 
-}
+// Configures react-navigation to use screens instead of plain RN Views for rendering screen views
+// see: https://github.com/kmagiera/react-native-screens
+useScreens();
 
-const styleText = {
-    fontSize: 30,
-    fontWeight: 'bold',
-}
-
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
-        return (
-            <View style={styleContainer}>
-                <Text style={styleText}>
-                    {'The App!'}
-                </Text>
-            </View>
-        )
+        return <Navigation/>
     }
-}
-
-export default App;
+};
