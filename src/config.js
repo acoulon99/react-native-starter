@@ -1,5 +1,3 @@
 const API = 'api.example.com';
 
-export {
-    API,
-};
+export {API};

@@ -1,18 +1,10 @@
-import {
-    Dimensions,
-} from 'react-native';
+import {Dimensions} from 'react-native';
 
-
-const {
-    height,
-    width,
-} = Dimensions.get('window');
+const {height, width} = Dimensions.get('window');
 
 const DEVICE = Object.freeze({
-    HEIGHT: height,
-    WIDTH: width,
+  HEIGHT: height,
+  WIDTH: width,
 });
 
-export {
-    DEVICE,
-};
+export {DEVICE};
